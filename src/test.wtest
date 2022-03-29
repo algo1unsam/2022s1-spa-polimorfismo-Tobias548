@@ -1,0 +1,16 @@
+import personas.*
+test "Ramiro baja su nivel de contractura y no tiene la piel grasosa" {
+	var contracturaInicial
+	ramiro.juegaPaddle()
+	contracturaInicial = ramiro.nivelContractura()
+	ramiro.comerBigmac()
+	spa.atender(ramiro)
+	assert.that(contracturaInicial > ramiro.nivelContractura())
+	assert.notThat(ramiro.pielGrasosa())
+}
+
+test "Olivia va dos veces al spa"{
+	spa.atender(olivia)
+	spa.atender(olivia)
+	assert.equals(15,olivia.gradoDeConcentracion())
+}
