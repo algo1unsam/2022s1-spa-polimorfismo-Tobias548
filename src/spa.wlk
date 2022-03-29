@@ -1,4 +1,0 @@
-import personas.*
-
-object spa {
-}
