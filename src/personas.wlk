@@ -27,7 +27,7 @@ object bruno {
 	method tomarAgua(){
 		sed = false
 	}
-	method comeFideos(){
+	method comeFideos() {
 		peso += 250
 		sed = true
 	}
@@ -38,7 +38,7 @@ object bruno {
 		felicidad = false
 	}
 	method estaPerfecto(){
-		return felicidad and not sed and peso > 50000 and peso < 70000
+		return felicidad and not sed and peso.between(50000,70000)
 	}
 	method mediodiaEnCasa(){
 		self.comeFideos()
@@ -50,9 +50,7 @@ object ramiro {
 	var nivelContractura = 0
 	var pielGrasosa
 	method recibeMasajes(){
-		if (nivelContractura > 0){
-			nivelContractura -= 1
-		}
+			nivelContractura = nivelContractura.max(0) 
 	}
 	method banioVapor(){
 		pielGrasosa = false
@@ -91,4 +89,3 @@ object spa{
 		ultimoCliente = persona
 	}
 }
-
